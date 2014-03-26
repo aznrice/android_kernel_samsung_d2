@@ -4,6 +4,9 @@
 # 14 Sep 2000, Christoph Hellwig <hch@infradead.org>
 # Rewritten to use lists instead of if-statements.
 # 
+ifdef CONFIG_CC_OPTIMIZE_FOR_PERF
+CFLAGS_fs-writeback.o += -Os
+endif
 
 obj-y :=	open.o read_write.o file_table.o super.o \
 		char_dev.o stat.o exec.o pipe.o namei.o fcntl.o \
